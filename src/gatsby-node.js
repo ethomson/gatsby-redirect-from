@@ -29,7 +29,7 @@ function createPages({
   const {
     createRedirect
   } = actions;
-  const markdownQuery = pluginOptions.query || 'allMarkdownRemark';
+  const markdownQuery = pluginOptions.query || 'allMdx';
   return new Promise((resolve, reject) => {
     resolve(graphql(`
           {
