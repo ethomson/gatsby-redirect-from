@@ -6,10 +6,21 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.createPages = createPages;
+exports.createSchemaCustomization = createSchemaCustomization;
 
 var _chalk = _interopRequireDefault(require("chalk"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function createSchemaCustomization({
+  actions: {createTypes}
+}) {
+  createTypes(`
+    type MdxFrontmatter {
+      redirect_from: [String]
+    }
+  `);
+}
 
 function createPages({
   graphql,
